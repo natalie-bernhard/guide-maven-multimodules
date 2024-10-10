@@ -18,6 +18,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.junit.jupiter.api.Test;
 
@@ -66,6 +68,16 @@ public class IT {
         }
         in.close();
         return response.toString();
+    }
+
+    private void dateformatMethod(){
+        Date fromDate = null;
+        try{
+            fromDate = new SimpleDateFormat("MM/dd/yyyy").parse("01/01/1999");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        System.out.println(fromDate);
     }
 
 }
