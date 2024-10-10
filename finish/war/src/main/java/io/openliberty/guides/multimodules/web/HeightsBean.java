@@ -11,6 +11,10 @@
 // end::copyright[]
 package io.openliberty.guides.multimodules.web;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class HeightsBean implements java.io.Serializable {
     private String heightCm = null;
     private String heightFeet = null;
@@ -50,6 +54,13 @@ public class HeightsBean implements java.io.Serializable {
         // end::getFeet[]
         String result = String.valueOf(feet);
         this.heightFeet = result;
+        Date fromDate = null;
+        try{
+            fromDate = new SimpleDateFormat("MM/dd/yyyy").parse("01/01/1999");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        System.out.println(fromDate);
     }
     // end::setHeightFeet[]
 
